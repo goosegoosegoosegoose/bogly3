@@ -8,11 +8,20 @@
 <p>{{post.content}}</p>
 <br>
 <p>
-    <i>By {{post.user.first_name}} {{post.user.last_name}}</i>
+    <i>By {{post.user.first_name}} {{post.user.last_name}} on {{post.created_at}}</i>
+</p>
+<p><b>Tags:</b>
+    {% for tag in tags %}
+    {{tag.name}}
+    {% endfor %}
 </p>
 <form action="/posts/{{post.id}}/delete" method="POST">
-    <a href='/users/{{post.user.id}}'><button type="button">Cancel</button></a>
-    <a href="/posts/{{post.id}}/edit"><button type="button">Edit</button></a>
+    <a href='/users/{{post.user.id}}'>
+        <button type="button">Cancel</button>
+    </a>
+    <a href="/posts/{{post.id}}/edit">
+        <button type="button">Edit</button>
+    </a>
     <button>Delete</button>
 </form>
 

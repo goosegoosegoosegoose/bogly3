@@ -50,3 +50,23 @@ class Post(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey('users.id', ondelete='CASCADE'))
     
     user = db.relationship('User')
+    tags = db.relationship('Tag', secondary='post_tag', backref='posts')
+    unique_tags = db.relationship('PostTag', backref='posts')
+
+class Tag(db.Model):
+    """Tag"""
+
+    __tablename__="tags"
+
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    name = db.Column(db.Text, nullable=False, unique=True)
+
+    unique_tags = db.relationship('PostTag', backref='tags')
+
+class PostTag(db.Model):
+    """Links post and tag"""
+
+    __tablename__="post_tag"
+
+    post_id = db.Column(db.Integer, db.ForeignKey('posts.id', ondelete='CASCADE'), primary_key=True)
+    tag_id = db.Column(db.Integer, db.ForeignKey('tags.id', ondelete='CASCADE'), primary_key=True)

@@ -7,13 +7,18 @@
 {% block content %}
 <form action="/users/{{user.id}}/posts/new" id="new-post" method="POST">
     <p>Title<br>
-    <input type="text" name="title" id="title">
+        <input type="text" name="title" id="title">
     </p>
     <br>
     <p>Content<br>
-    <input type="text" name="content" id="content">
+        <input type="text" name="content" id="content">
     </p>
-    <br>
+    <p>
+        {% for tag in tags %}
+            <input type="checkbox" name="tags" id="{{tag.id}}" value="{{tag.id}}">
+            <label for="{{tag.id}}">{{tag.name}}</label><br>
+        {% endfor %}
+    </p>
     <a href='/users/{{user.id}}'><button type="button">Cancel</button></a>
     <button type="submit">Add</button>
 </form>

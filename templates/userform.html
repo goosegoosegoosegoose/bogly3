@@ -7,18 +7,20 @@
 {% block content %}
 <form action="/users/new" id="new-user" method="POST">
     <p>First name<br>
-    <input type="text" name="first_name" id="first_name" placeholder="Enter a first name">
+        <input type="text" name="first_name" id="first_name" placeholder="Enter a first name">
     </p>
     <br>
     <p>Last name<br>
-    <input type="text" name="last_name" id="last_name" placeholder="Enter a last name">
+        <input type="text" name="last_name" id="last_name" placeholder="Enter a last name">
     </p>
     <br>
     <p>Image URL<br>
-    <input type="text" name="image_url" id="image_url" placeholder="Provide an image of this user">
+        <input type="text" name="image_url" id="image_url" placeholder="Provide an image of this user">
     </p>
     <br>
-    <a href='/users'><button type="button">Cancel</button></a>
+    <a href='/users'>
+        <button type="button">Cancel</button>
+    </a>
     <button type="submit">Add</button>
 </form>
 

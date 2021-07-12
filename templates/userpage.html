@@ -17,9 +17,13 @@
     <li><a href="/posts/{{post.id}}">{{post.title}}</a></li>
     {% endfor %}
 </ul>
-<a href="/users/{{user.id}}/posts/new"><button>Add post</button></a>
+<a href="/users/{{user.id}}/posts/new">
+    <button>Add post</button>
+</a>
 <br>
 <br>
-<a href="/users"><button>Back</button></a>
+<a href="/users">
+    <button>Back</button>
+</a>
 
 {% endblock %}

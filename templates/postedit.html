@@ -7,15 +7,24 @@
 {% block content %}
 <form action="/posts/{{post.id}}/edit" method="POST">
     <p>Title<br>
-    <input type="text" name="title" id="title" value="{{post.title}}">
+        <input type="text" name="title" id="title" value="{{post.title}}">
     </p>
     <br>
     <p>Content<br>
-    <input type="text" name="content" id="content" value="{{post.content}}">
+        <input type="text" name="content" id="content" value="{{post.content}}">
     </p>
-    <br>
-    <a href='/posts/{{post.id}}'><button type="button">Cancel</button></a>
+    <p>
+        {% for tag in tags %}
+            <input type="checkbox" name="tags" id="{{tag.id}}" value="{{tag.id}}">
+            <label for="{{tag.id}}">{{tag.name}}</label><br>
+        {% endfor %}
+    </p>
+    <a href='/posts/{{post.id}}'>
+        <button type="button">Cancel</button>
+    </a>
     <button type="submit">Edit</button>
 </form>
 
 {% endblock %}
+
+<!-- can't figure out how to have checklist prechecked. I know you have you to use ? in some capacity. -->

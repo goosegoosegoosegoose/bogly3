@@ -7,15 +7,15 @@
 {% block content %}
 <form action="/users/{{user.id}}/edit" method="POST">
     <p>First name<br>
-    <input type="text" name="first_name" id="first_name" value="{{user.first_name}}">
+        <input type="text" name="first_name" id="first_name" value="{{user.first_name}}">
     </p>
     <br>
     <p>Last name<br>
-    <input type="text" name="last_name" id="last_name" value="{{user.last_name}}">
+        <input type="text" name="last_name" id="last_name" value="{{user.last_name}}">
     </p>
     <br>
     <p>Image URL<br>
-    <input type="text" name="image_url" id="image_url" value="{{user.image_url}}">
+        <input type="text" name="image_url" id="image_url" value="{{user.image_url}}">
     </p>
     <br>
     <a href="/users/{{user.id}}"><button>Cancel</button></a>
