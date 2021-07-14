@@ -223,3 +223,4 @@ def delete_tag(tag_id):
 
     return redirect('/tags')
 
+    # cant delete a tag thats being used despite using ondelte='CASCADE', probably because it's a primary key?
